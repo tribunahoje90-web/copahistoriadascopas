@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Diário das Copas — Histórias das Copas 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playfair+Display:ital,wght@0,700;1,400&family=Source+Serif+4:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { background: #021a10; color: #f8f5ef; font-family: 'Source Serif 4', Georgia, serif; }
+
+  .header { background: rgba(0,0,0,0.97); padding: 12px 32px; display: flex; align-items: center; justify-content: space-between; border-bottom: 2px solid #cc0000; position: sticky; top: 0; z-index: 100; }
+  .header-logo img { height: 32px; width: auto; filter: brightness(0) invert(1); }
+  .header-title { font-family: 'Bebas Neue', sans-serif; font-size: 0.9rem; letter-spacing: 0.25em; color: #FFCC00; flex: 1; text-align: center; }
+  .header-back { font-family: 'Bebas Neue', sans-serif; font-size: 0.65rem; letter-spacing: 0.18em; color: rgba(255,255,255,0.5); text-decoration: none; transition: color 0.2s; white-space: nowrap; }
+  .header-back:hover { color: #FFCC00; }
+  @media (max-width: 600px) { .header { padding: 10px 14px; } .header-logo img { height: 24px; } .header-title { font-size: 0.7rem; } }
+
+  .hero { text-align: center; padding: 60px 24px 50px; background: linear-gradient(to bottom, #000, #021a10); }
+  .hero-badge { display: inline-block; background: #cc0000; color: #fff; font-family: 'Bebas Neue', sans-serif; font-size: 0.75rem; letter-spacing: 0.28em; padding: 5px 18px; border-radius: 2px; margin-bottom: 14px; }
+  .hero-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(2.5rem, 6vw, 5rem); color: #fff; line-height: 0.92; margin-bottom: 12px; }
+  .hero-title em { color: #FFCC00; font-style: normal; }
+  .hero-sub { font-size: 0.85rem; color: rgba(255,255,255,0.45); letter-spacing: 0.15em; text-transform: uppercase; }
+
+  .tabs { display: flex; justify-content: center; gap: 10px; padding: 0 24px 48px; flex-wrap: wrap; }
+  .tab-btn { font-family: 'Bebas Neue', sans-serif; font-size: 0.85rem; letter-spacing: 0.18em; padding: 10px 20px; border-radius: 3px; cursor: pointer; border: 2px solid rgba(255,255,255,0.15); background: transparent; color: rgba(255,255,255,0.5); transition: all 0.2s; }
+  .tab-btn:hover { border-color: #FFCC00; color: #FFCC00; }
+  .tab-btn.ativo { background: #FFCC00; color: #000; border-color: #FFCC00; }
+
+  .edicao { display: none; max-width: 900px; margin: 0 auto; padding: 0 24px 80px; }
+  .edicao.ativa { display: block; }
+
+  .edicao-capa { margin-bottom: 32px; border-radius: 8px; overflow: hidden; border: 1px solid rgba(255,255,255,0.1); }
+  .edicao-capa img { width: 100%; display: block; }
+  .edicao-capa-info { background: #000; padding: 16px 20px; display: flex; align-items: center; justify-content: space-between; }
+  .edicao-capa-num { font-family: 'Bebas Neue', sans-serif; font-size: 0.7rem; letter-spacing: 0.25em; color: #FFCC00; }
+
+  .pagina-item { margin-bottom: 24px; border-radius: 8px; overflow: hidden; border: 1px solid rgba(255,255,255,0.08); transition: border-color 0.25s; }
+  .pagina-item:hover { border-color: rgba(255,204,0,0.35); }
+  .pagina-item img { width: 100%; display: block; }
+  .pagina-label { background: #000; padding: 10px 16px; font-family: 'Bebas Neue', sans-serif; font-size: 0.65rem; letter-spacing: 0.22em; color: rgba(255,255,255,0.3); border-top: 1px solid rgba(255,255,255,0.05); }
+
+  footer { background: #000; padding: 30px 24px; text-align: center; border-top: 1px solid rgba(255,255,255,0.06); }
+  footer img { height: 24px; filter: brightness(0) invert(1); opacity: 0.4; margin-bottom: 8px; display: block; margin-left: auto; margin-right: auto; }
+  footer p { font-size: 0.68rem; color: rgba(255,255,255,0.2); letter-spacing: 0.15em; text-transform: uppercase; }
+</style>
+</head>
+<body>
+
+<header class="header">
+  <a href="index.html" class="header-logo"><img src="LINE_HORIZONTAL.png" alt="Tribuna Hoje"></a>
+  <div class="header-title">◈ DIÁRIO DAS COPAS</div>
+  <a href="index.html" class="header-back">← VOLTAR</a>
+</header>
+
+<div class="hero">
+  <div class="hero-badge">⚽ EDIÇÃO DIGITAL</div>
+  <h1 class="hero-title">DIÁRIO <em>DAS COPAS</em></h1>
+  <p class="hero-sub">Tribuna Hoje · Histórias das Copas 2026</p>
+</div>
+
+<div class="tabs">
+  <button class="tab-btn ativo" onclick="mostrarEdicao(1, this)">EDIÇÃO 1</button>
+  <button class="tab-btn" onclick="mostrarEdicao(2, this)">EDIÇÃO 2</button>
+  <button class="tab-btn" onclick="mostrarEdicao(3, this)">EDIÇÃO 3</button>
+  <button class="tab-btn" onclick="mostrarEdicao(4, this)">EDIÇÃO 4</button>
+  <button class="tab-btn" onclick="mostrarEdicao(5, this)">EDIÇÃO 5</button>
+  <button class="tab-btn" onclick="mostrarEdicao(6, this)">EDIÇÃO 6</button>
+  <button class="tab-btn" onclick="mostrarEdicao(7, this)">EDIÇÃO 7</button>
+  <button class="tab-btn" onclick="mostrarEdicao(8, this)">EDIÇÃO 8</button>
+  <button class="tab-btn" onclick="mostrarEdicao(9, this)">EDIÇÃO 9</button>
+  <button class="tab-btn" onclick="mostrarEdicao(10, this)">EDIÇÃO 10</button>
+  <button class="tab-btn" onclick="mostrarEdicao(11, this)">EDIÇÃO 11</button>
+  <button class="tab-btn" onclick="mostrarEdicao(12, this)">EDIÇÃO 12</button>
+  <button class="tab-btn" onclick="mostrarEdicao(13, this)">EDIÇÃO 13</button>
+</div>
+
+<!-- EDIÇÕES 1 a 13 -->
+<div class="edicao ativa" id="ed1">
+  <div class="edicao-capa"><img src="capa-diario1.jpg" alt="Diário das Copas — Edição 1"><div class="edicao-capa-info"><span class="edicao-capa-num">◈ DIÁRIO DAS COPAS · EDIÇÃO 1</span></div></div>
+  <div class="pagina-item"><img src="diario1_p1.jpg" alt="Página 1"><div class="pagina-label">◈ PÁGINA 1</div></div>
+  <div class="pagina-item"><img src="diario1_p2.jpg" alt="Página 2"><div class="pagina-label">◈ PÁGINA 2</div></div>
+  <div class="pagina-item"><img src="diario1_p3.jpg" alt="Página 3"><div class="pagina-label">◈ PÁGINA 3</div></div>
+</div>
+
+<div class="edicao" id="ed2">
+  <div class="edicao-capa"><img src="capa-diario2.jpg" alt="Diário das Copas — Edição 2"><div class="edicao-capa-info"><span class="edicao-capa-num">◈ DIÁRIO DAS COPAS · EDIÇÃO 2</span></div></div>
+  <div class="pagina-item"><img src="diario2_p1.jpg" alt="Página 1"><div class="pagina-label">◈ PÁGINA 1</div></div>
+  <div class="pagina-item"><img src="diario2_p2.jpg" alt="Página 2"><div class="pagina-label">◈ PÁGINA 2</div></div>
+  <div class="pagina-item"><img src="diario2_p3.jpg" alt="Página 3"><div class="pagina-label">◈ PÁGINA 3</div></div>
+</div>
+
+<div class="edicao" id="ed3">
+  <div class="edicao-capa"><img src="capa-diario3.jpg" alt="Diário das Copas — Edição 3"><div class="edicao-capa-info"><span class="edicao-capa-num">◈ DIÁRIO DAS COPAS · EDIÇÃO 3</span></div></div>
+  <div class="pagina-item"><img src="diario3_p1.jpg" alt="Página 1"><div class="pagina-label">◈ PÁGINA 1</div></div>
+  <div class="pagina-item"><img src="diario3_p2.jpg" alt="Página 2"><div class="pagina-label">◈ PÁGINA 2</div></div>
+  <div class="pagina-item"><img src="diario3_p3.jpg" alt="Página 3"><div class="pagina-label">◈ PÁGINA 3</div></div>
+</div>
+
+<div class="edicao" id="ed4">
+  <div class="edicao-capa"><img src="capa-diario4.jpg" alt="Diário das Copas — Edição 4"><div class="edicao-capa-info"><span class="edicao-capa-num">◈ DIÁRIO DAS COPAS · EDIÇÃO 4</span></div></div>
+  <div class="pagina-item"><img src="diario4_p1.jpg" alt="Página 1"><div class="pagina-label">◈ PÁGINA 1</div></div>
+  <div class="pagina-item"><img src="diario4_p2.jpg" alt="Página 2"><div class="pagina-label">◈ PÁGINA 2</div></div>
+  <div class="pagina-item"><img src="diario4_p3.jpg" alt="Página 3"><div class="pagina-label">◈ PÁGINA 3</div></div>
+</div>
+
+<div class="edicao" id="ed5">
+  <div class="edicao-capa"><img src="capa-diario5.jpg" alt="Diário das Copas — Edição 5"><div class="edicao-capa-info"><span class="edicao-capa-num">◈ DIÁRIO DAS COPAS · EDIÇÃO 5</span></div></div>
+  <div class="pagina-item"><img src="diario5_p1.jpg" alt="Página 1"><div class="pagina-label">◈ PÁGINA 1</div></div>
+  <div class="pagina-item"><img src="diario5_p2.jpg" alt="Página 2"><div class="pagina-label">◈ PÁGINA 2</div></div>
+  <div class="pagina-item"><img src="diario5_p3.jpg" alt="Página 3"><div class="pagina-label">◈ PÁGINA 3</div></div>
+</div>
+
+<div class="edicao" id="ed6">
+  <div class="edicao-capa"><img src="capa-diario6.jpg" alt="Diário das Copas — Edição 6"><div class="edicao-capa-info"><span class="edicao-capa-num">◈ DIÁRIO DAS COPAS · EDIÇÃO 6</span></div></div>
+  <div class="pagina-item"><img src="diario6_p1.jpg" alt="Página 1"><div class="pagina-label">◈ PÁGINA 1</div></div>
+  <div class="pagina-item"><img src="diario6_p2.jpg" alt="Página 2"><div class="pagina-label">◈ PÁGINA 2</div></div>
+  <div class="pagina-item"><img src="diario6_p3.jpg" alt="Página 3"><div class="pagina-label">◈ PÁGINA 3</div></div>
+</div>
+
+<div class="edicao" id="ed7">
+  <div class="edicao-capa"><img src="capa-diario7.jpg" alt="Diário das Copas — Edição 7"><div class="edicao-capa-info"><span class="edicao-capa-num">◈ DIÁRIO DAS COPAS · EDIÇÃO 7</span></div></div>
+  <div class="pagina-item"><img src="diario7_p1.jpg" alt="Página 1"><div class="pagina-label">◈ PÁGINA 1</div></div>
+  <div class="pagina-item"><img src="diario7_p2.jpg" alt="Página 2"><div class="pagina-label">◈ PÁGINA 2</div></div>
+  <div class="pagina-item"><img src="diario7_p3.jpg" alt="Página 3"><div class="pagina-label">◈ PÁGINA 3</div></div>
+</div>
+
+<div class="edicao" id="ed8">
+  <div class="edicao-capa"><img src="capa-diario8.jpg" alt="Diário das Copas — Edição 8"><div class="edicao-capa-info"><span class="edicao-capa-num">◈ DIÁRIO DAS COPAS · EDIÇÃO 8</span></div></div>
+  <div class="pagina-item"><img src="diario8_p1.jpg" alt="Página 1"><div class="pagina-label">◈ PÁGINA 1</div></div>
+  <div class="pagina-item"><img src="diario8_p2.jpg" alt="Página 2"><div class="pagina-label">◈ PÁGINA 2</div></div>
+  <div class="pagina-item"><img src="diario8_p3.jpg" alt="Página 3"><div class="pagina-label">◈ PÁGINA 3</div></div>
+</div>
+
+<div class="edicao" id="ed9">
+  <div class="edicao-capa"><img src="capa-diario9.jpg" alt="Diário das Copas — Edição 9"><div class="edicao-capa-info"><span class="edicao-capa-num">◈ DIÁRIO DAS COPAS · EDIÇÃO 9</span></div></div>
+  <div class="pagina-item"><img src="diario9_p1.jpg" alt="Página 1"><div class="pagina-label">◈ PÁGINA 1</div></div>
+  <div class="pagina-item"><img src="diario9_p2.jpg" alt="Página 2"><div class="pagina-label">◈ PÁGINA 2</div></div>
+  <div class="pagina-item"><img src="diario9_p3.jpg" alt="Página 3"><div class="pagina-label">◈ PÁGINA 3</div></div>
+</div>
+
+<div class="edicao" id="ed10">
+  <div class="edicao-capa"><img src="capa-diario10.jpg" alt="Diário das Copas — Edição 10"><div class="edicao-capa-info"><span class="edicao-capa-num">◈ DIÁRIO DAS COPAS · EDIÇÃO 10</span></div></div>
+  <div class="pagina-item"><img src="diario10_p1.jpg" alt="Página 1"><div class="pagina-label">◈ PÁGINA 1</div></div>
+  <div class="pagina-item"><img src="diario10_p2.jpg" alt="Página 2"><div class="pagina-label">◈ PÁGINA 2</div></div>
+  <div class="pagina-item"><img src="diario10_p3.jpg" alt="Página 3"><div class="pagina-label">◈ PÁGINA 3</div></div>
+</div>
+
+<div class="edicao" id="ed11">
+  <div class="edicao-capa"><img src="capa-diario11.jpg" alt="Diário das Copas — Edição 11"><div class="edicao-capa-info"><span class="edicao-capa-num">◈ DIÁRIO DAS COPAS · EDIÇÃO 11</span></div></div>
+  <div class="pagina-item"><img src="diario11_p1.jpg" alt="Página 1"><div class="pagina-label">◈ PÁGINA 1</div></div>
+  <div class="pagina-item"><img src="diario11_p2.jpg" alt="Página 2"><div class="pagina-label">◈ PÁGINA 2</div></div>
+  <div class="pagina-item"><img src="diario11_p3.jpg" alt="Página 3"><div class="pagina-label">◈ PÁGINA 3</div></div>
+</div>
+
+<div class="edicao" id="ed12">
+  <div class="edicao-capa"><img src="capa-diario12.jpg" alt="Diário das Copas — Edição 12"><div class="edicao-capa-info"><span class="edicao-capa-num">◈ DIÁRIO DAS COPAS · EDIÇÃO 12</span></div></div>
+  <div class="pagina-item"><img src="diario12_p1.jpg" alt="Página 1"><div class="pagina-label">◈ PÁGINA 1</div></div>
+  <div class="pagina-item"><img src="diario12_p2.jpg" alt="Página 2"><div class="pagina-label">◈ PÁGINA 2</div></div>
+  <div class="pagina-item"><img src="diario12_p3.jpg" alt="Página 3"><div class="pagina-label">◈ PÁGINA 3</div></div>
+</div>
+
+<div class="edicao" id="ed13">
+  <div class="edicao-capa"><img src="capa-diario13.jpg" alt="Diário das Copas — Edição 13"><div class="edicao-capa-info"><span class="edicao-capa-num">◈ DIÁRIO DAS COPAS · EDIÇÃO 13</span></div></div>
+  <div class="pagina-item"><img src="diario13_p1.jpg" alt="Página 1"><div class="pagina-label">◈ PÁGINA 1</div></div>
+  <div class="pagina-item"><img src="diario13_p2.jpg" alt="Página 2"><div class="pagina-label">◈ PÁGINA 2</div></div>
+  <div class="pagina-item"><img src="diario13_p3.jpg" alt="Página 3"><div class="pagina-label">◈ PÁGINA 3</div></div>
+</div>
+
+<footer>
+  <img src="LINE_HORIZONTAL.png" alt="Tribuna Hoje">
+  <p>Histórias das Copas 2026 · Maceió · Alagoas · Brasil</p>
+</footer>
+
+<script>
+function mostrarEdicao(num, btn) {
+  document.querySelectorAll('.edicao').forEach(e => e.classList.remove('ativa'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('ativo'));
+  document.getElementById('ed' + num).classList.add('ativa');
+  btn.classList.add('ativo');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+const params = new URLSearchParams(window.location.search);
+const ed = parseInt(params.get('ed'));
+if (ed >= 1 && ed <= 13) {
+  const btn = document.querySelectorAll('.tab-btn')[ed - 1];
+  mostrarEdicao(ed, btn);
+}
+</script>
+</body>
+</html>
