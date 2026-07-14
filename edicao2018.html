@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Edição 2018 — Histórias das Copas</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playfair+Display:ital,wght@0,700;1,400&family=Source+Serif+4:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --amarelo: #FFCC00;
+    --vermelho: #cc0000;
+    --verde: #064028;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: #000;
+    color: #f8f5ef;
+    font-family: 'Source Serif 4', Georgia, serif;
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    padding: 12px 28px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(0,0,0,0.96);
+    backdrop-filter: blur(14px);
+    border-bottom: 2px solid var(--vermelho);
+  }
+
+  .nav-logo img { height: 30px; filter: brightness(0) invert(1); }
+
+  .nav-voltar {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 0.82rem;
+    letter-spacing: 0.2em;
+    color: rgba(255,255,255,0.5);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .nav-voltar:hover { color: var(--amarelo); }
+
+  /* ── HEADER DA EDIÇÃO ── */
+  .edicao-header {
+    padding: 60px 28px 40px;
+    text-align: center;
+    background: linear-gradient(to bottom, #0a0000, #000);
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+
+  .edicao-tag {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 0.78rem;
+    letter-spacing: 0.35em;
+    color: var(--vermelho);
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  .edicao-titulo {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(2.5rem, 7vw, 5rem);
+    color: #fff;
+    line-height: 0.92;
+    margin-bottom: 14px;
+  }
+
+  .edicao-titulo em { color: var(--amarelo); font-style: normal; }
+
+  .edicao-subtitulo {
+    font-size: 0.95rem;
+    color: rgba(255,255,255,0.45);
+    font-weight: 300;
+    margin-bottom: 28px;
+  }
+
+  /* seletor de edições */
+  .edicao-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    padding: 0 28px;
+  }
+
+  .edicao-tab {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 0.78rem;
+    letter-spacing: 0.18em;
+    padding: 7px 18px;
+    border-radius: 2px;
+    border: 1px solid rgba(255,255,255,0.15);
+    color: rgba(255,255,255,0.45);
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-decoration: none;
+  }
+
+  .edicao-tab:hover,
+  .edicao-tab.ativo {
+    background: var(--amarelo);
+    border-color: var(--amarelo);
+    color: #000;
+  }
+
+  /* ── GALERIA DE FOTOS ── */
+  .fotos-section {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 52px 20px 80px;
+  }
+
+  /* cada foto ocupa a largura toda — rola como álbum */
+  .foto-item {
+    margin-bottom: 12px;
+    border-radius: 6px;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.06);
+    background: #0a0a0a;
+  }
+
+  .foto-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: opacity 0.3s;
+  }
+
+  .foto-item img.carregando { opacity: 0.3; }
+
+  .foto-legenda {
+    padding: 10px 16px 12px;
+    background: #0a0a0a;
+    border-top: 1px solid rgba(255,255,255,0.05);
+  }
+
+  .foto-legenda-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 0.62rem;
+    letter-spacing: 0.25em;
+    color: var(--amarelo);
+    margin-bottom: 2px;
+  }
+
+  .foto-legenda-desc {
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.35);
+    font-weight: 300;
+  }
+
+  /* estado vazio */
+  .fotos-vazio {
+    text-align: center;
+    padding: 80px 20px;
+    display: none;
+  }
+
+  .fotos-vazio-icon { font-size: 3rem; margin-bottom: 16px; }
+
+  .fotos-vazio-texto {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.2rem;
+    letter-spacing: 0.2em;
+    color: rgba(255,255,255,0.25);
+  }
+
+  /* botão voltar ao topo */
+  .btn-topo {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: var(--amarelo);
+    color: #000;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.5);
+    transition: transform 0.2s;
+    z-index: 50;
+  }
+
+  .btn-topo:hover { transform: translateY(-3px); }
+  .btn-topo.visivel { display: flex; }
+
+  /* footer */
+  footer {
+    background: #000;
+    padding: 32px 28px;
+    text-align: center;
+    border-top: 1px solid rgba(255,255,255,0.06);
+  }
+
+  .footer-logo img { height: 24px; filter: brightness(0) invert(1); opacity: 0.35; margin-bottom: 8px; }
+  .footer-sub { font-size: 0.7rem; color: rgba(255,255,255,0.15); letter-spacing: 0.15em; text-transform: uppercase; }
+
+  @media (max-width: 600px) {
+    .fotos-section { padding: 32px 12px 60px; }
+    .foto-item { margin-bottom: 8px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">
+    <img src="LINE_HORIZONTAL.png" alt="Tribuna Hoje">
+  </a>
+  <a href="index.html#edicao2018" class="nav-voltar">← VOLTAR</a>
+</nav>
+
+<!-- HEADER -->
+<div class="edicao-header">
+  <span class="edicao-tag" id="edicao-tag">◈ EDIÇÃO ESPECIAL · 2018</span>
+  <h1 class="edicao-titulo" id="edicao-titulo">EDIÇÃO <em id="edicao-num">1</em></h1>
+  <p class="edicao-subtitulo" id="edicao-manchete">Histórias das Copas · Tribuna Hoje</p>
+
+  <!-- abas para trocar edição -->
+  <div class="edicao-tabs">
+    <a href="?ed=1" class="edicao-tab" data-ed="1">EDIÇÃO 1</a>
+    <a href="?ed=2" class="edicao-tab" data-ed="2">EDIÇÃO 2</a>
+    <a href="?ed=3" class="edicao-tab" data-ed="3">EDIÇÃO 3</a>
+    <a href="?ed=4" class="edicao-tab" data-ed="4">EDIÇÃO 4</a>
+    <a href="?ed=5" class="edicao-tab" data-ed="5">EDIÇÃO 5</a>
+  </div>
+</div>
+
+<!-- FOTOS -->
+<div class="fotos-section" id="fotos-section">
+  <!-- preenchido pelo JS -->
+</div>
+
+<div class="fotos-vazio" id="fotos-vazio">
+  <div class="fotos-vazio-icon">📰</div>
+  <div class="fotos-vazio-texto">EM BREVE</div>
+</div>
+
+<!-- BOTÃO TOPO -->
+<button class="btn-topo" id="btn-topo" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<footer>
+  <div class="footer-logo"><img src="LINE_HORIZONTAL.png" alt="Tribuna Hoje"></div>
+  <div class="footer-sub">Histórias das Copas 2026 · Maceió · Alagoas · Brasil</div>
+</footer>
+
+<script>
+// ── CONFIGURAÇÃO DAS EDIÇÕES ─────────────────────────────
+// Para cada edição, defina:
+//   manchete: título da edição
+//   fotos: lista dos arquivos de imagem (na pasta do projeto)
+//   total: quantas fotos tem (o script tenta carregar de 1 até total)
+//   prefixo: nome base do arquivo (ex: "ed1_" → ed1_1.jpg, ed1_2.jpg...)
+
+const EDICOES = {
+  1: {
+    manchete: 'A VOZ ALAGOANA NA COPA',
+    prefixo: 'ed1_',       // ← AJUSTE o prefixo conforme seus arquivos
+    total: 12,             // ← AJUSTE o número de fotos da edição 1
+    ext: 'jpg'
+  },
+  2: {
+    manchete: 'JOÃOZINHO PAULISTA: ÍDOLO NACIONAL',
+    prefixo: 'ed2_',
+    total: 16,
+    ext: 'jpg'
+  },
+  3: {
+    manchete: 'O DIA QUE GARRINCHA JOGOU PELO CSA E ASA',
+    prefixo: 'ed3_',
+    total: 12,
+    ext: 'jpg'
+  },
+  4: {
+    manchete: 'BASTINHO: O VICE-REI DA CBF',
+    prefixo: 'ed4_',
+    total: 8,
+    ext: 'jpg'
+  },
+  5: {
+    manchete: 'A ERA DE OURO DO VÔLEI ALAGOANO',
+    prefixo: 'ed5_',
+    total: 8,
+    ext: 'jpg'
+  }
+};
+
+// ── LÊ A EDIÇÃO DA URL (?ed=1) ───────────────────────────
+function getEdicao() {
+  const p = new URLSearchParams(window.location.search);
+  const ed = parseInt(p.get('ed')) || 1;
+  return EDICOES[ed] ? ed : 1;
+}
+
+// ── MONTA A PÁGINA ───────────────────────────────────────
+function carregarEdicao(numEd) {
+  const ed = EDICOES[numEd];
+  const section = document.getElementById('fotos-section');
+  const vazio = document.getElementById('fotos-vazio');
+
+  // atualiza header
+  document.getElementById('edicao-num').textContent = numEd;
+  document.getElementById('edicao-manchete').textContent = ed.manchete;
+  document.getElementById('edicao-tag').textContent = `◈ EDIÇÃO ${numEd} · 2018`;
+  document.title = `Edição ${numEd} — Histórias das Copas`;
+
+  // marca aba ativa
+  document.querySelectorAll('.edicao-tab').forEach(tab => {
+    tab.classList.toggle('ativo', parseInt(tab.dataset.ed) === numEd);
+  });
+
+  // limpa conteúdo anterior
+  section.innerHTML = '';
+  vazio.style.display = 'none';
+
+  // cria items para cada foto
+  let alguma = false;
+
+  for (let i = 1; i <= ed.total; i++) {
+    const src = `${ed.prefixo}${i}.${ed.ext}`;
+    const item = document.createElement('div');
+    item.className = 'foto-item';
+
+    const img = document.createElement('img');
+    img.alt = `Edição ${numEd} — página ${i}`;
+    img.className = 'carregando';
+    img.loading = 'lazy'; // carrega conforme rola
+
+    img.onload = () => {
+      img.classList.remove('carregando');
+      alguma = true;
+    };
+
+    img.onerror = () => {
+      // foto não existe — remove o item silenciosamente
+      item.remove();
+      if (!alguma && section.children.length === 0) {
+        vazio.style.display = 'block';
+      }
+    };
+
+    img.src = src;
+
+    const legenda = document.createElement('div');
+    legenda.className = 'foto-legenda';
+    legenda.innerHTML = `
+      <div class="foto-legenda-num">◈ PÁG. ${i} · EDIÇÃO ${numEd}</div>
+      <div class="foto-legenda-desc">Histórias das Copas · Tribuna Hoje · 2018</div>
+    `;
+
+    item.appendChild(img);
+    item.appendChild(legenda);
+    section.appendChild(item);
+  }
+}
+
+// ── BOTÃO TOPO ───────────────────────────────────────────
+window.addEventListener('scroll', () => {
+  document.getElementById('btn-topo').classList.toggle('visivel', window.scrollY > 400);
+});
+
+// ── INIT ─────────────────────────────────────────────────
+carregarEdicao(getEdicao());
+</script>
+
+</body>
+</html>

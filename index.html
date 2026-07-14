@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BFKT8XJQJN"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-BFKT8XJQJN');
+</script>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KDR8MW96');</script>
+<!-- End Google Tag Manager -->
+<title>Histórias das Copas 2026 — Tribuna Hoje</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playfair+Display:ital,wght@0,700;1,400&family=Source+Serif+4:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+  :root { --verde:#064028; --verde-claro:#00a650; --amarelo:#FFCC00; --azul-tag:#5bc4f5; --branco:#f8f5ef; --cinza:#064028; --vermelho:#cc0000; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  body { background:var(--cinza); color:var(--branco); font-family:'Source Serif 4',Georgia,serif; overflow-x:hidden; }
+  nav { position:sticky; top:0; z-index:100; padding:10px 32px; display:flex; align-items:center; justify-content:space-between; gap:20px; background:rgba(0,0,0,0.97); backdrop-filter:blur(14px); border-bottom:1px solid rgba(255,255,255,0.06); }
+  .nav-logo img { height:36px; width:auto; display:block; filter:brightness(0) invert(1); flex-shrink:0; }
+  .nav-tagline { font-family:'Bebas Neue',sans-serif; font-size:0.6rem; letter-spacing:0.25em; color:rgba(255,255,255,0.9); text-transform:uppercase; flex:1; text-align:center; }
+  @media (max-width:600px) { nav { padding:8px 14px; } .nav-logo img { height:28px; } .nav-tagline { display:none; } }
+  .nav-sponsors { position:sticky; top:57px; z-index:99; padding:12px 32px; display:flex; align-items:center; justify-content:center; gap:40px; background:rgba(0,0,0,0.93); backdrop-filter:blur(14px); border-bottom:2px solid var(--vermelho); }
+  .nav-sponsors img { height:54px; width:auto; max-width:160px; object-fit:contain; opacity:0.95; transition:opacity 0.2s,transform 0.2s; }
+  .nav-sponsors img:hover { opacity:1; transform:scale(1.05); }
+  @media (max-width:900px) { .nav-sponsors { gap:28px; padding:10px 20px; top:52px; } .nav-sponsors img { height:44px; max-width:120px; } }
+  @media (max-width:600px) { .nav-sponsors { gap:16px; padding:10px 14px; top:46px; } .nav-sponsors img { height:40px; max-width:calc(25% - 12px); } }
+  .hero { min-height:100vh; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:100px 24px 90px; position:relative; overflow:hidden; background:#021a10; }
+  .hero-video-bg { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:0; background:#021a10; }
+  .hero-poster-fallback { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:0; display:none; }
+  @media (max-width:700px) { .hero-poster-fallback { display:block; } }
+  .hero::before { content:''; position:absolute; inset:0; background:linear-gradient(to bottom,rgba(0,0,0,0.55) 0%,rgba(0,0,0,0.30) 40%,rgba(0,0,0,0.55) 75%,rgba(0,0,0,0.85) 100%); z-index:1; pointer-events:none; }
+  .hero-stars { position:absolute; inset:0; overflow:hidden; pointer-events:none; z-index:1; }
+  .star { position:absolute; width:3px; height:3px; border-radius:50%; background:#fff; opacity:0; animation:twinkle var(--dur,3s) var(--delay,0s) ease-in-out infinite; }
+  @keyframes twinkle { 0%,100% { opacity:0; transform:scale(0.5); } 50% { opacity:0.35; transform:scale(1.3); } }
+  .hero-badge { display:inline-block; background:var(--vermelho); color:#fff; font-family:'Bebas Neue',sans-serif; font-size:0.82rem; letter-spacing:0.28em; padding:6px 22px; border-radius:2px; margin-bottom:16px; animation:fadeDown 0.7s ease both; position:relative; z-index:2; }
+  .hero-subtitle { font-size:clamp(0.9rem,2vw,1.1rem); font-weight:300; color:rgba(255,255,255,0.75); margin-top:20px; max-width:540px; line-height:1.65; animation:fadeDown 1s 0.35s ease both; position:relative; z-index:2; }
+  .hero-meta { display:flex; gap:48px; margin-top:36px; animation:fadeDown 1s 0.5s ease both; flex-wrap:wrap; justify-content:center; position:relative; z-index:2; }
+  .hero-meta-item { text-align:center; }
+  .hero-meta-number { font-family:'Bebas Neue',sans-serif; font-size:3.2rem; color:var(--amarelo); line-height:1; }
+  .hero-meta-label { font-size:0.72rem; letter-spacing:0.22em; text-transform:uppercase; color:rgba(255,255,255,0.38); margin-top:5px; }
+  .hero-cta { margin-top:36px; display:flex; gap:14px; flex-wrap:wrap; justify-content:center; animation:fadeDown 1s 0.65s ease both; position:relative; z-index:2; }
+  .hero-scroll { position:absolute; bottom:30px; left:50%; transform:translateX(-50%); display:flex; flex-direction:column; align-items:center; gap:8px; font-family:'Bebas Neue',sans-serif; font-size:0.65rem; letter-spacing:0.25em; color:rgba(255,255,255,0.35); animation:bounce 2.5s infinite; z-index:2; }
+  .hero-scroll::after { content:''; width:1px; height:36px; background:linear-gradient(to bottom,rgba(255,255,255,0.35),transparent); }
+  @keyframes bounce { 0%,100% { transform:translateX(-50%) translateY(0); } 50% { transform:translateX(-50%) translateY(9px); } }
+  @keyframes fadeDown { from { opacity:0; transform:translateY(-18px); } to { opacity:1; transform:translateY(0); } }
+  .btn { display:inline-block; padding:14px 34px; font-family:'Bebas Neue',sans-serif; font-size:1.05rem; letter-spacing:0.18em; border-radius:3px; cursor:pointer; text-decoration:none; transition:transform 0.15s,box-shadow 0.15s; border:none; }
+  .btn:hover { transform:translateY(-2px); box-shadow:0 8px 28px rgba(0,0,0,0.45); }
+  .btn-primary { background:var(--amarelo); color:#000; }
+  .btn-secondary { background:transparent; color:#fff; border:2px solid rgba(255,255,255,0.3); }
+  .btn-secondary:hover { border-color:var(--amarelo); color:var(--amarelo); }
+  .copa-stripe { background:var(--vermelho); padding:13px 0; overflow:hidden; }
+  .copa-stripe-inner { display:flex; gap:60px; white-space:nowrap; animation:marquee 22s linear infinite; font-family:'Bebas Neue',sans-serif; font-size:1rem; letter-spacing:0.22em; color:#fff; }
+  @keyframes marquee { from { transform:translateX(0); } to { transform:translateX(-50%); } }
+  .section-tag { font-family:'Bebas Neue',sans-serif; font-size:0.78rem; letter-spacing:0.35em; color:var(--azul-tag); display:block; margin-bottom:12px; }
+  .section-title { font-family:'Bebas Neue',sans-serif; font-size:clamp(2.8rem,6vw,5rem); color:#fff; line-height:0.92; }
+  .section-title em { color:var(--amarelo); font-style:normal; }
+  .videos-lances { padding:80px 28px; background:linear-gradient(to bottom,#000,#0a0a0a); }
+  .videos-lances-inner { max-width:1080px; margin:0 auto; }
+  .videos-lances-header { text-align:center; margin-bottom:52px; }
+  .videos-lances-header .section-tag { color:var(--amarelo); }
+  .videos-lances-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:24px; align-items:start; }
+  @media (max-width:700px) { .videos-lances-grid { grid-template-columns:1fr; gap:28px; } }
+  .video-lance-card { position:relative; border-radius:8px; overflow:hidden; border:1px solid rgba(255,255,255,0.08); background:#000; transition:border-color 0.25s,transform 0.25s; }
+  .video-lance-card:hover { border-color:rgba(255,204,0,0.4); transform:translateY(-3px); }
+  .video-lance-card video,.video-lance-card iframe { width:100%; aspect-ratio:16/9; display:block; border:none; }
+  .video-lance-card.reels video,.video-lance-card.reels iframe { aspect-ratio:9/16; max-height:620px; object-fit:cover; }
+  .video-lance-info { padding:18px 20px 22px; background:rgba(0,0,0,0.85); }
+  .video-lance-tag { font-family:'Bebas Neue',sans-serif; font-size:0.65rem; letter-spacing:0.3em; color:var(--amarelo); margin-bottom:8px; display:block; }
+  .video-lance-titulo { font-family:'Playfair Display',Georgia,serif; font-style:italic; font-size:1.15rem; color:#fff; line-height:1.45; margin-bottom:10px; }
+  .video-lance-desc { font-size:0.85rem; color:rgba(255,255,255,0.6); font-weight:300; line-height:1.65; }
+  .revistas2026 { padding:80px 28px 110px; background:linear-gradient(to bottom,#032018,#021410); }
+  .revistas2026-inner { max-width:1080px; margin:0 auto; }
+  .revistas2026-header { text-align:center; margin-bottom:60px; }
+  .revistas-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); gap:24px; }
+  @media (max-width:600px) { .revistas-grid { grid-template-columns:repeat(2,1fr); gap:14px; } }
+  .revista-card { position:relative; border-radius:8px; overflow:hidden; border:1px solid rgba(255,255,255,0.08); background:#0a0a0a; aspect-ratio:3/4; display:flex; flex-direction:column; }
+  .revista-card.disponivel { cursor:pointer; text-decoration:none; transition:transform 0.25s,border-color 0.25s; }
+  .revista-card.disponivel:hover { transform:translateY(-5px); border-color:rgba(255,204,0,0.45); }
+  .revista-card img { width:100%; flex:1; object-fit:cover; display:block; transition:transform 0.4s; }
+  .revista-card.disponivel:hover img { transform:scale(1.04); }
+  .revista-lock-bg { width:100%; flex:1; background:linear-gradient(135deg,#0d1a0d 0%,#091209 50%,#0d1a0d 100%); display:flex; flex-direction:column; align-items:center; justify-content:center; gap:12px; position:relative; overflow:hidden; }
+  .revista-lock-bg::before { content:''; position:absolute; inset:0; background:repeating-linear-gradient(45deg,transparent,transparent 12px,rgba(255,255,255,0.015) 12px,rgba(255,255,255,0.015) 13px); }
+  .revista-lock-icon { font-size:2.4rem; filter:grayscale(1); opacity:0.45; position:relative; z-index:1; }
+  .revista-lock-num { font-family:'Bebas Neue',sans-serif; font-size:4rem; color:rgba(255,255,255,0.05); line-height:1; position:absolute; bottom:8px; right:12px; }
+  .revista-info { padding:12px 14px 14px; background:#000; border-top:1px solid rgba(255,255,255,0.06); }
+  .revista-num { font-family:'Bebas Neue',sans-serif; font-size:0.6rem; letter-spacing:0.28em; color:var(--amarelo); margin-bottom:3px; }
+  .revista-data { font-size:0.68rem; color:rgba(255,255,255,0.3); font-style:italic; }
+  .revista-badge-disp { position:absolute; top:10px; left:10px; background:var(--amarelo); color:#000; font-family:'Bebas Neue',sans-serif; font-size:0.58rem; letter-spacing:0.18em; padding:3px 10px; border-radius:2px; z-index:2; }
+  .revista-badge-lock { position:absolute; top:10px; left:10px; background:rgba(0,0,0,0.6); border:1px solid rgba(255,255,255,0.1); color:rgba(255,255,255,0.35); font-family:'Bebas Neue',sans-serif; font-size:0.58rem; letter-spacing:0.18em; padding:3px 10px; border-radius:2px; z-index:2; }
+  .galeria-restauracao { padding:80px 28px; background:linear-gradient(to bottom,#000,#021a10); }
+  .galeria-restauracao-inner { max-width:1080px; margin:0 auto; }
+  .galeria-header { text-align:center; margin-bottom:52px; }
+  .galeria-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
+  @media (max-width:760px) { .galeria-grid { grid-template-columns:repeat(2,1fr); gap:12px; } }
+  .galeria-item { display:flex; flex-direction:column; border-radius:6px; overflow:hidden; border:1px solid rgba(255,255,255,0.08); cursor:pointer; transition:border-color 0.25s,transform 0.25s; }
+  .galeria-item:hover { border-color:rgba(255,204,0,0.35); transform:translateY(-3px); }
+  .galeria-badge-wrap { display:flex; padding:10px 12px 8px; background:#000; }
+  .galeria-badge { font-family:'Bebas Neue',sans-serif; font-size:0.65rem; letter-spacing:0.25em; padding:4px 14px; border-radius:2px; }
+  .galeria-badge.antes { background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.2); color:rgba(255,255,255,0.8); }
+  .galeria-badge.depois { background:rgba(255,204,0,0.85); color:#000; }
+  .galeria-foto { width:100%; aspect-ratio:3/4; overflow:hidden; }
+  .galeria-foto img { width:100%; height:100%; object-fit:cover; display:block; transition:transform 0.4s ease; }
+  .galeria-item:hover .galeria-foto img { transform:scale(1.04); }
+  .galeria-legenda { background:#000; padding:14px 16px 16px; border-top:1px solid rgba(255,255,255,0.06); }
+  .galeria-legenda-nome { font-family:'Bebas Neue',sans-serif; font-size:0.95rem; letter-spacing:0.12em; color:#fff; margin-bottom:5px; }
+  .galeria-legenda-desc { font-size:0.78rem; color:rgba(255,255,255,0.55); font-weight:300; line-height:1.55; }
+  .sobre { max-width:980px; margin:0 auto; padding:100px 28px; display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:center; }
+  @media (max-width:720px) { .sobre { grid-template-columns:1fr; padding:64px 24px; gap:40px; } }
+  .sobre-tag { font-family:'Bebas Neue',sans-serif; font-size:0.78rem; letter-spacing:0.32em; color:var(--azul-tag); margin-bottom:14px; }
+  .sobre-title { font-family:'Playfair Display',Georgia,serif; font-size:clamp(1.8rem,3.5vw,2.8rem); line-height:1.18; color:#fff; margin-bottom:22px; }
+  .sobre-text { color:rgba(255,255,255,0.58); line-height:1.82; font-size:1rem; font-weight:300; }
+  .sobre-text + .sobre-text { margin-top:14px; }
+  .sobre-destaque { background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.07); border-left:4px solid var(--amarelo); padding:32px; border-radius:4px; }
+  .sobre-destaque-quote { font-family:'Playfair Display',Georgia,serif; font-style:italic; font-size:1.35rem; line-height:1.55; color:#fff; margin-bottom:12px; }
+  .sobre-destaque-autor { font-family:'Bebas Neue',sans-serif; font-size:0.75rem; letter-spacing:0.18em; color:var(--amarelo); margin-bottom:14px; }
+  .sobre-destaque-texto { font-size:0.85rem; color:rgba(255,255,255,0.5); font-weight:300; line-height:1.7; }
+  .divider { display:flex; align-items:center; gap:14px; max-width:240px; margin:0 auto; }
+  .divider-line { flex:1; height:1px; background:linear-gradient(90deg,transparent,var(--amarelo),transparent); }
+  .divider-ball { color:var(--amarelo); font-size:1.1rem; }
+  .diario-copas { padding:80px 28px 110px; background:linear-gradient(to bottom,#021410,#032018); border-top:2px solid var(--vermelho); }
+  .diario-copas-inner { max-width:1080px; margin:0 auto; }
+  .diario-copas-header { text-align:center; margin-bottom:56px; }
+  .diario-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(140px,1fr)); gap:20px; }
+  @media (max-width:900px) { .diario-grid { grid-template-columns:repeat(4,1fr); gap:12px; } }
+  @media (max-width:500px) { .diario-grid { grid-template-columns:repeat(2,1fr); gap:10px; } }
+  .diario-card { position:relative; border-radius:6px; overflow:hidden; border:1px solid rgba(255,255,255,0.08); transition:transform 0.25s,border-color 0.25s; cursor:pointer; text-decoration:none; display:block; aspect-ratio:3/4; }
+  .diario-card:hover { transform:translateY(-6px); border-color:rgba(255,204,0,0.45); }
+  .diario-card img { width:100%; height:100%; object-fit:cover; display:block; transition:transform 0.4s; }
+  .diario-card:hover img { transform:scale(1.04); }
+  .diario-overlay { position:absolute; inset:0; background:linear-gradient(to top,rgba(0,0,0,0.9) 0%,transparent 55%); display:flex; flex-direction:column; justify-content:flex-end; padding:16px 14px; opacity:0; transition:opacity 0.25s; }
+  .diario-card:hover .diario-overlay { opacity:1; }
+  .diario-num-badge { position:absolute; top:10px; left:10px; background:var(--vermelho); color:#fff; font-family:'Bebas Neue',sans-serif; font-size:0.75rem; letter-spacing:0.15em; padding:3px 10px; border-radius:2px; }
+  .diario-btn { display:inline-flex; align-items:center; gap:6px; background:var(--amarelo); color:#000; font-family:'Bebas Neue',sans-serif; font-size:0.72rem; letter-spacing:0.18em; padding:6px 14px; border-radius:2px; width:fit-content; }
+  .capas2018 { padding:80px 28px 110px; background:linear-gradient(to bottom,var(--cinza),#032018); }
+  .capas2018-inner { max-width:1080px; margin:0 auto; }
+  .capas2018-header { text-align:center; margin-bottom:56px; }
+  .capas2018-grid { display:grid; grid-template-columns:repeat(5,1fr); gap:20px; }
+  @media (max-width:900px) { .capas2018-grid { grid-template-columns:repeat(3,1fr); gap:14px; } }
+  @media (max-width:600px) { .capas2018-grid { grid-template-columns:repeat(2,1fr); gap:12px; } }
+  .capa-card { position:relative; border-radius:6px; overflow:hidden; border:1px solid rgba(255,255,255,0.08); transition:transform 0.25s,border-color 0.25s; cursor:pointer; text-decoration:none; display:block; aspect-ratio:3/4; }
+  .capa-card:hover { transform:translateY(-6px); border-color:rgba(255,204,0,0.45); }
+  .capa-card img { width:100%; height:100%; object-fit:cover; display:block; transition:transform 0.4s; }
+  .capa-card:hover img { transform:scale(1.04); }
+  .capa-overlay { position:absolute; inset:0; background:linear-gradient(to top,rgba(0,0,0,0.88) 0%,transparent 55%); display:flex; flex-direction:column; justify-content:flex-end; padding:18px 14px; opacity:0; transition:opacity 0.25s; }
+  .capa-card:hover .capa-overlay { opacity:1; }
+  .capa-pdf-btn { display:inline-flex; align-items:center; gap:6px; background:var(--amarelo); color:#000; font-family:'Bebas Neue',sans-serif; font-size:0.72rem; letter-spacing:0.18em; padding:6px 14px; border-radius:2px; width:fit-content; }
+  .capa-numero-badge { position:absolute; top:10px; left:10px; background:var(--vermelho); color:#fff; font-family:'Bebas Neue',sans-serif; font-size:0.8rem; letter-spacing:0.15em; padding:3px 10px; border-radius:2px; }
+  .anunciantes { background:#000; padding:90px 28px; border-top:1px solid rgba(255,255,255,0.05); }
+  .anunciantes-inner { max-width:1080px; margin:0 auto; }
+  .anunciantes-header { text-align:center; margin-bottom:50px; }
+  .anunciantes-header p { color:rgba(255,255,255,0.42); font-size:0.95rem; font-weight:300; margin-top:12px; max-width:520px; margin-left:auto; margin-right:auto; line-height:1.65; }
+  .anunciantes-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-bottom:48px; }
+  @media (max-width:700px) { .anunciantes-grid { grid-template-columns:repeat(2,1fr); } }
+  .anunciante-slot { background:rgba(255,255,255,0.025); border:1.5px dashed rgba(255,255,255,0.12); border-radius:7px; padding:36px 20px; text-align:center; transition:border-color 0.2s,background 0.2s; display:flex; flex-direction:column; align-items:center; justify-content:center; min-height:120px; }
+  .anunciante-slot:hover { border-color:var(--amarelo); background:rgba(255,204,0,0.04); }
+  .anunciante-slot-icon { font-size:2rem; margin-bottom:10px; }
+  .anunciante-slot-text { font-family:'Bebas Neue',sans-serif; font-size:0.85rem; letter-spacing:0.2em; color:rgba(255,255,255,0.28); }
+  .anunciante-slot-sub { font-size:0.7rem; color:rgba(255,255,255,0.18); margin-top:5px; }
+  .anunciante-cta { text-align:center; }
+  .anunciante-cta p { color:rgba(255,255,255,0.42); font-size:0.9rem; font-weight:300; margin-bottom:22px; }
+  .videos-projeto { padding:80px 28px; background:linear-gradient(to bottom,#0a0000,#1a0000); border-top:2px solid var(--vermelho); }
+  .videos-projeto-inner { max-width:1080px; margin:0 auto; }
+  .videos-projeto-header { text-align:center; margin-bottom:52px; }
+  .videos-projeto-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:24px; margin-bottom:40px; }
+  @media (max-width:700px) { .videos-projeto-grid { grid-template-columns:1fr; gap:24px; } }
+  .video-yt-card { border-radius:8px; overflow:hidden; border:1px solid rgba(255,255,255,0.08); background:#111; transition:border-color 0.25s,transform 0.25s; }
+  .video-yt-card:hover { border-color:rgba(91,196,245,0.5); transform:translateY(-3px); }
+  .video-yt-card iframe { width:100%; aspect-ratio:16/9; display:block; border:none; }
+  .video-yt-info { padding:14px 18px 18px; }
+  .video-yt-tag { font-family:'Bebas Neue',sans-serif; font-size:0.65rem; letter-spacing:0.3em; color:var(--azul-tag); margin-bottom:5px; display:block; }
+  .video-yt-titulo { font-family:'Bebas Neue',sans-serif; font-size:1.15rem; color:#fff; line-height:1.15; }
+  footer { background:#000; padding:40px 28px; text-align:center; border-top:1px solid rgba(255,255,255,0.06); }
+  .footer-logo img { height:28px; width:auto; filter:brightness(0) invert(1); opacity:0.45; margin-bottom:12px; }
+  .footer-sub { font-size:0.72rem; color:rgba(255,255,255,0.2); letter-spacing:0.15em; text-transform:uppercase; }
+  .reveal { opacity:0; transform:translateY(28px); transition:opacity 0.7s ease,transform 0.7s ease; }
+  .reveal.visible { opacity:1; transform:translateY(0); }
+</style>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KDR8MW96" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<!-- NAV PRINCIPAL -->
+<nav>
+  <a href="#" class="nav-logo"><img src="LINE_HORIZONTAL.png" alt="Tribuna Hoje"></a>
+  <span class="nav-tagline">⭐ NOSSA SELEÇÃO DE PATROCINADORES</span>
+</nav>
+
+<!-- NAV PATROCINADORES -->
+<div class="nav-sponsors">
+  <img src="logopatrocinador1.png" alt="Patrocinador 1">
+  <img src="logopatrocinador2.png" alt="Patrocinador 2">
+  <img src="logopatrocinador3.png" alt="Patrocinador 3">
+  <img src="logopatrocinador4.png" alt="Patrocinador 4">
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <img class="hero-poster-fallback" src="hero-poster.jpg" alt="">
+  <video class="hero-video-bg" src="https://res.cloudinary.com/die6uwzqx/video/upload/v1780089494/jogador-chute.mp4_wgrl0x.mp4" autoplay muted loop playsinline webkit-playsinline poster="hero-poster.jpg"></video>
+  <div class="hero-stars" id="stars"></div>
+  <div class="hero-badge">⚽ TRIBUNA HOJE APRESENTA ⚽</div>
+  <img src="HistoriasdasCopas.png" alt="Histórias das Copas" style="position:relative;z-index:2;max-width:min(680px,90vw);width:100%;height:auto;animation:fadeDown 0.9s 0.2s ease both;filter:drop-shadow(0 4px 40px rgba(0,0,0,0.6));">
+  <p class="hero-subtitle">O melhor do futebol alagoano, nacional e mundial em 7 edições especiais durante a Copa de 2026.</p>
+  <div class="hero-meta">
+    <div class="hero-meta-item"><div class="hero-meta-number">2018</div><div class="hero-meta-label">Última Edição</div></div>
+    <div class="hero-meta-item"><div class="hero-meta-number">2026</div><div class="hero-meta-label">Copa</div></div>
+  </div>
+  <div class="hero-cta">
+    <a href="#edicao2018" class="btn btn-primary">VER A EDIÇÃO DE 2018</a>
+    <a href="#encartes" class="btn btn-secondary">EDIÇÃO 2026 EM PROGRESSO</a>
+  </div>
+  <div class="hero-scroll">Rolar</div>
+</section>
+
+<!-- MARQUEE -->
+<div class="copa-stripe">
+  <div class="copa-stripe-inner">
+    <span>⚽ ACOMPANHE OS JOGOS DO BRASIL</span><span>★ A COPA DE 2026</span><span>⚽ 31 DE MAIO</span><span>★ TRIBUNA HOJE · HISTÓRIAS DAS COPAS</span><span>⚽ FUTEBOL ALAGOANO · CULTURA · HISTÓRIA</span><span>★ EDIÇÃO ESPECIAL IMPRESSO E DIGITAL</span><span>⚽ 6 DE JUNHO</span><span>★ A COPA DE 2026</span><span>⚽ 13 DE JUNHO</span><span>★ TRIBUNA HOJE · HISTÓRIAS DAS COPAS</span><span>⚽ 19 DE JUNHO JOGO DO BRASIL</span><span>⚽ 24 DE JUNHO JOGO DO BRASIL</span><span>★ 7 EDIÇÕES ESPECIAIS IMPRESSAS E DIGITAIS</span><span>⚽ ACOMPANHE OS JOGOS DO BRASIL</span><span>★ A COPA DE 2026</span><span>⚽ 31 DE MAIO</span><span>★ TRIBUNA HOJE · HISTÓRIAS DAS COPAS</span><span>⚽ FUTEBOL ALAGOANO · CULTURA · HISTÓRIA</span><span>★ EDIÇÃO ESPECIAL IMPRESSO E DIGITAL</span><span>⚽ 6 DE JUNHO</span><span>★ A COPA DE 2026</span><span>⚽ 13 DE JUNHO</span><span>★ TRIBUNA HOJE · HISTÓRIAS DAS COPAS</span><span>⚽ 19 DE JUNHO JOGO DO BRASIL</span><span>⚽ 24 DE JUNHO JOGO DO BRASIL</span><span>★ 7 EDIÇÕES ESPECIAIS IMPRESSAS E DIGITAIS</span>
+  </div>
+</div>
+
+<!-- VÍDEOS LANCES -->
+<section class="videos-lances reveal">
+  <div class="videos-lances-inner">
+    <div class="videos-lances-header">
+      <span class="section-tag">◈ VÍDEOS INÉDITOS DAS COPAS DO MUNDO</span>
+      <h2 class="section-title">LANCES <em>INESQUECÍVEIS</em></h2>
+    </div>
+    <div class="videos-lances-grid">
+      <div class="video-lance-card reels">
+        <video id="video-pele" src="https://res.cloudinary.com/die6uwzqx/video/upload/v1780025180/Era_1958._Pel%C3%A9_com_apenas_17_anos_marcou_dois_gols_na_final_da_Copa_do_Mundo._Um_deles_foi_es_u4mbzd.mp4" muted loop playsinline preload="auto"></video>
+        <div class="video-lance-info">
+          <span class="video-lance-tag">◈ FINAL DA COPA 1958 · SUÉCIA · Vídeo: @pele • Instagram Official</span>
+          <div class="video-lance-titulo">Pelé tinha apenas 17 anos quando encantou o planeta na final da Copa.</div>
+          <div class="video-lance-desc">Foram dois gols históricos. Um deles, uma verdadeira obra de arte. O Rei ainda é o jogador mais jovem a conquistar o torneio. O Rei farmava aura como ninguém.</div>
+        </div>
+      </div>
+      <div class="video-lance-card">
+        <video id="video-dida" src="https://res.cloudinary.com/die6uwzqx/video/upload/v1781105820/IMG_0770_wk6qke.mov" muted loop playsinline preload="auto"></video>
+        <div class="video-lance-info">
+          <span class="video-lance-tag">◈ ACERVO EXCLUSIVO · Dida jogando pelo Flamengo</span>
+          <div class="video-lance-titulo">Década 50 canal youtube @rluiz66</div>
+          <div class="video-lance-desc">Imagens inéditas do maior ídolo do futebol alagoano em campo.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVISTAS 2026 -->
+<section class="revistas2026 reveal" id="encartes">
+  <div class="revistas2026-inner">
+    <div class="revistas2026-header">
+      <span class="section-tag">◈ A EDIÇÃO 2026</span>
+      <h2 class="section-title">SETE REVISTAS,<br><em>SETE HISTÓRIAS</em></h2>
+    </div>
+    <div class="revistas-grid">
+      <a href="edicao2026.html?ed=1" target="_blank" class="revista-card disponivel">
+        <span class="revista-badge-disp">✅ DISPONÍVEL</span>
+        <img src="capa2026-1.jpg" alt="Revista 1" style="width:100%;flex:1;object-fit:cover;display:block;">
+        <div class="revista-info"><div class="revista-num">◈ REVISTA 1 · 2026</div><div class="revista-data">📅 9 de junho de 2026</div><div style="margin-top:10px;"><span style="display:inline-block;background:#FFCC00;color:#000;font-family:'Bebas Neue',sans-serif;font-size:0.75rem;letter-spacing:0.18em;padding:6px 16px;border-radius:3px;">📖 LER REVISTA</span></div></div>
+      </a>
+      <a href="edicao2026.html?ed=2" target="_blank" class="revista-card disponivel">
+        <span class="revista-badge-disp">✅ DISPONÍVEL</span>
+        <img src="capa2026-2.jpg" alt="Revista 2" style="width:100%;flex:1;object-fit:cover;display:block;">
+        <div class="revista-info"><div class="revista-num">◈ REVISTA 2 · 2026</div><div class="revista-data">📅 16 de junho de 2026</div><div style="margin-top:10px;"><span style="display:inline-block;background:#FFCC00;color:#000;font-family:'Bebas Neue',sans-serif;font-size:0.75rem;letter-spacing:0.18em;padding:6px 16px;border-radius:3px;">📖 LER REVISTA</span></div></div>
+      </a>
+      <div class="revista-card bloqueado"><span class="revista-badge-lock">🔒 EM BREVE</span><div class="revista-lock-bg"><div class="revista-lock-icon">🔒</div><div class="revista-lock-num">3</div></div><div class="revista-info"><div class="revista-num">◈ REVISTA 3 · 2026</div><div class="revista-data">EM BREVE</div></div></div>
+      <div class="revista-card bloqueado"><span class="revista-badge-lock">🔒 EM BREVE</span><div class="revista-lock-bg"><div class="revista-lock-icon">🔒</div><div class="revista-lock-num">4</div></div><div class="revista-info"><div class="revista-num">◈ REVISTA 4 · 2026</div><div class="revista-data">EM BREVE</div></div></div>
+      <div class="revista-card bloqueado"><span class="revista-badge-lock">🔒 EM BREVE</span><div class="revista-lock-bg"><div class="revista-lock-icon">🔒</div><div class="revista-lock-num">5</div></div><div class="revista-info"><div class="revista-num">◈ REVISTA 5 · 2026</div><div class="revista-data">EM BREVE</div></div></div>
+      <div class="revista-card bloqueado"><span class="revista-badge-lock">🔒 EM BREVE</span><div class="revista-lock-bg"><div class="revista-lock-icon">🔒</div><div class="revista-lock-num">6</div></div><div class="revista-info"><div class="revista-num">◈ REVISTA 6 · 2026</div><div class="revista-data">EM BREVE</div></div></div>
+      <div class="revista-card bloqueado"><span class="revista-badge-lock">🔒 EM BREVE</span><div class="revista-lock-bg"><div class="revista-lock-icon">🔒</div><div class="revista-lock-num">7</div></div><div class="revista-info"><div class="revista-num">◈ REVISTA 7 · 2026</div><div class="revista-data">EM BREVE</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- GALERIA -->
+<section class="galeria-restauracao reveal">
+  <div class="galeria-restauracao-inner">
+    <div class="galeria-header">
+      <span class="section-tag">◈ MEMÓRIA RESTAURADA</span>
+      <h2 class="section-title">O FUTEBOL <em>ALAGOANO</em><br>RESTAURADO</h2>
+    </div>
+    <div class="galeria-grid">
+      <div class="galeria-item"><div class="galeria-badge-wrap"><span class="galeria-badge antes">ANTES</span></div><div class="galeria-foto"><img src="foto1-antes.png" alt="antes"></div><div class="galeria-legenda"><div class="galeria-legenda-nome">Dida jogando no Flamengo na década de 50</div><div class="galeria-legenda-desc">Foto Original</div></div></div>
+      <div class="galeria-item"><div class="galeria-badge-wrap"><span class="galeria-badge depois">DEPOIS</span></div><div class="galeria-foto"><img src="foto1-depois.png" alt="depois"></div><div class="galeria-legenda"><div class="galeria-legenda-nome">Foto restaurada, em alta qualidade.</div><div class="galeria-legenda-desc">Foto Restaurada</div></div></div>
+      <div class="galeria-item"><div class="galeria-badge-wrap"><span class="galeria-badge antes">ANTES</span></div><div class="galeria-foto"><img src="foto2-antes.png" alt="antes"></div><div class="galeria-legenda"><div class="galeria-legenda-nome">Seleção de fotos no Museu do Futebol</div><div class="galeria-legenda-desc">Foto Original</div></div></div>
+      <div class="galeria-item"><div class="galeria-badge-wrap"><span class="galeria-badge depois">DEPOIS</span></div><div class="galeria-foto"><img src="foto2-depois.png" alt="depois"></div><div class="galeria-legenda"><div class="galeria-legenda-nome">Foto restaurada, em alta qualidade.</div><div class="galeria-legenda-desc">Foto Restaurada</div></div></div>
+      <div class="galeria-item"><div class="galeria-badge-wrap"><span class="galeria-badge antes">ANTES</span></div><div class="galeria-foto"><img src="foto3-antes.png" alt="antes"></div><div class="galeria-legenda"><div class="galeria-legenda-nome">Dida posa com o manto rubro-negro.</div><div class="galeria-legenda-desc">Foto: Reprodução/A Gazeta Esportiva</div></div></div>
+      <div class="galeria-item"><div class="galeria-badge-wrap"><span class="galeria-badge depois">DEPOIS</span></div><div class="galeria-foto"><img src="foto3-depois.png" alt="depois"></div><div class="galeria-legenda"><div class="galeria-legenda-nome">Foto restaurada, em alta qualidade.</div><div class="galeria-legenda-desc">Foto Restaurada</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- SOBRE -->
+<section class="sobre reveal">
+  <div class="sobre-conteudo">
+    <div class="sobre-tag">◈ SOBRE O PROJETO</div>
+    <h2 class="sobre-title">Uma revista, um jornal, uma Copa: e também a história de Alagoas no futebol</h2>
+    <p class="sobre-text">A REVISTA <strong>Histórias das Copas</strong> nasceu em 2018, durante a Copa da Rússia, e se tornou uma das produções jornalísticas mais ricas já feitas sobre o futebol alagoano.</p>
+    <p class="sobre-text">Para 2026, o projeto chega renovado: 7 revistas, com reportagens exclusivas, biografias, curiosidades e entrevistas com os grandes nomes do esporte — impressos e digitais.</p>
+  </div>
+  <div class="sobre-destaque">
+    <blockquote class="sobre-destaque-quote">"Se Pelé não tivesse nascido gente, teria nascido bola."</blockquote>
+    <div class="sobre-destaque-autor">— Armando Nogueira, jornalista</div>
+    <p class="sobre-destaque-texto">Esta é uma das crônicas mais icônicas da história do jornalismo esportivo brasileiro. A genialidade de Armando Nogueira ao definir Pelé dessa forma resume a simbiose perfeita entre o Rei do Futebol e o objeto de seu ofício.</p>
+  </div>
+</section>
+
+<div class="divider"><div class="divider-line"></div><div class="divider-ball">⚽</div><div class="divider-line"></div></div>
+
+<!-- DIÁRIO DAS COPAS -->
+<section class="diario-copas reveal" id="diario-copas">
+  <div class="diario-copas-inner">
+    <div class="diario-copas-header">
+      <span class="section-tag">◈ EDIÇÃO DIGITAL</span>
+      <h2 class="section-title">DIÁRIO <em>DAS COPAS</em></h2>
+    </div>
+    <div class="diario-grid">
+      <a href="diario-das-copas.html?ed=1" target="_blank" class="diario-card"><img src="capa-diario1.jpg" alt="Diário 1"><span class="diario-num-badge">EDIÇÃO 1</span><div class="diario-overlay"><div class="diario-btn">📄 LER EDIÇÃO COMPLETA</div></div></a>
+      <a href="diario-das-copas.html?ed=2" target="_blank" class="diario-card"><img src="capa-diario2.jpg" alt="Diário 2"><span class="diario-num-badge">EDIÇÃO 2</span><div class="diario-overlay"><div class="diario-btn">📄 LER EDIÇÃO COMPLETA</div></div></a>
+      <a href="diario-das-copas.html?ed=3" target="_blank" class="diario-card"><img src="capa-diario3.jpg" alt="Diário 3"><span class="diario-num-badge">EDIÇÃO 3</span><div class="diario-overlay"><div class="diario-btn">📄 LER EDIÇÃO COMPLETA</div></div></a>
+      <a href="diario-das-copas.html?ed=4" target="_blank" class="diario-card"><img src="capa-diario4.jpg" alt="Diário 4"><span class="diario-num-badge">EDIÇÃO 4</span><div class="diario-overlay"><div class="diario-btn">📄 LER EDIÇÃO COMPLETA</div></div></a>
+      <a href="diario-das-copas.html?ed=5" target="_blank" class="diario-card"><img src="capa-diario5.jpg" alt="Diário 5"><span class="diario-num-badge">EDIÇÃO 5</span><div class="diario-overlay"><div class="diario-btn">📄 LER EDIÇÃO COMPLETA</div></div></a>
+      <a href="diario-das-copas.html?ed=6" target="_blank" class="diario-card"><img src="capa-diario6.jpg" alt="Diário 6"><span class="diario-num-badge">EDIÇÃO 6</span><div class="diario-overlay"><div class="diario-btn">📄 LER EDIÇÃO COMPLETA</div></div></a>
+      <a href="diario-das-copas.html?ed=7" target="_blank" class="diario-card"><img src="capa-diario7.jpg" alt="Diário 7"><span class="diario-num-badge">EDIÇÃO 7</span><div class="diario-overlay"><div class="diario-btn">📄 LER EDIÇÃO COMPLETA</div></div></a>
+      <a href="diario-das-copas.html?ed=8" target="_blank" class="diario-card"><img src="capa-diario8.jpg" alt="Diário 8"><span class="diario-num-badge">EDIÇÃO 8</span><div class="diario-overlay"><div class="diario-btn">📄 LER EDIÇÃO COMPLETA</div></div></a>
+      <a href="diario-das-copas.html?ed=9" target="_blank" class="diario-card"><img src="capa-diario9.jpg" alt="Diário 9"><span class="diario-num-badge">EDIÇÃO 9</span><div class="diario-overlay"><div class="diario-btn">📄 LER EDIÇÃO COMPLETA</div></div></a>
+      <a href="diario-das-copas.html?ed=10" target="_blank" class="diario-card"><img src="capa-diario10.jpg" alt="Diário 10"><span class="diario-num-badge">EDIÇÃO 10</span><div class="diario-overlay"><div class="diario-btn">📄 LER EDIÇÃO COMPLETA</div></div></a>
+      <a href="diario-das-copas.html?ed=11" target="_blank" class="diario-card"><img src="capa-diario11.jpg" alt="Diário 11"><span class="diario-num-badge">EDIÇÃO 11</span><div class="diario-overlay"><div class="diario-btn">📄 LER EDIÇÃO COMPLETA</div></div></a>
+      <a href="diario-das-copas.html?ed=12" target="_blank" class="diario-card"><img src="capa-diario12.jpg" alt="Diário 12"><span class="diario-num-badge">EDIÇÃO 12</span><div class="diario-overlay"><div class="diario-btn">📄 LER EDIÇÃO COMPLETA</div></div></a>
+      <a href="diario-das-copas.html?ed=13" target="_blank" class="diario-card"><img src="capa-diario13.jpg" alt="Diário 13"><span class="diario-num-badge">EDIÇÃO 13</span><div class="diario-overlay"><div class="diario-btn">📄 LER EDIÇÃO COMPLETA</div></div></a>
+    </div>
+  </div>
+</section>
+
+<!-- CAPAS 2018 -->
+<section class="capas2018 reveal" id="edicao2018">
+  <div class="capas2018-inner">
+    <div class="capas2018-header">
+      <span class="section-tag">◈ EDIÇÃO ESPECIAL</span>
+      <h2 class="section-title">AS CAPAS DE <em>2018</em></h2>
+    </div>
+    <div class="capas2018-grid">
+      <a href="edicao2018.html?ed=1" target="_blank" class="capa-card"><img src="1capa2018.jpg" alt="Edição 1"><span class="capa-numero-badge">EDIÇÃO 1</span><div class="capa-overlay"><div class="capa-pdf-btn">📄 LER REVISTA COMPLETA</div></div></a>
+      <a href="edicao2018.html?ed=2" target="_blank" class="capa-card"><img src="2capa2018.jpg" alt="Edição 2"><span class="capa-numero-badge">EDIÇÃO 2</span><div class="capa-overlay"><div class="capa-pdf-btn">📄 LER REVISTA COMPLETA</div></div></a>
+      <a href="edicao2018.html?ed=3" target="_blank" class="capa-card"><img src="3capa2018.jpg" alt="Edição 3"><span class="capa-numero-badge">EDIÇÃO 3</span><div class="capa-overlay"><div class="capa-pdf-btn">📄 LER REVISTA COMPLETA</div></div></a>
+      <a href="edicao2018.html?ed=4" target="_blank" class="capa-card"><img src="4capa2018.jpg" alt="Edição 4"><span class="capa-numero-badge">EDIÇÃO 4</span><div class="capa-overlay"><div class="capa-pdf-btn">📄 LER REVISTA COMPLETA</div></div></a>
+      <a href="edicao2018.html?ed=5" target="_blank" class="capa-card"><img src="5capa2018.jpg" alt="Edição 5"><span class="capa-numero-badge">EDIÇÃO 5</span><div class="capa-overlay"><div class="capa-pdf-btn">📄 LER REVISTA COMPLETA</div></div></a>
+    </div>
+  </div>
+</section>
+
+<!-- ANUNCIANTES -->
+<section class="anunciantes" id="anuncie">
+  <div class="anunciantes-inner">
+    <div class="anunciantes-header reveal">
+      <span class="section-tag">◈ PATROCINADORES</span>
+      <h2 class="section-title" style="margin-top:16px;">ANUNCIE <em>AQUI</em></h2>
+      <p>Posicione sua marca ao lado do melhor jornalismo esportivo de Alagoas, no impresso e no digital, durante a Copa de 2026.</p>
+    </div>
+    <div class="anunciantes-grid reveal">
+      <div class="anunciante-slot"><img src="logopatrocinador1.png" alt="Patrocinador 1" style="max-height:70px;width:auto;max-width:100%;object-fit:contain;"></div>
+      <div class="anunciante-slot"><img src="logopatrocinador2.png" alt="Patrocinador 2" style="max-height:70px;width:auto;max-width:100%;object-fit:contain;"></div>
+      <div class="anunciante-slot"><img src="logopatrocinador3.png" alt="Patrocinador 3" style="max-height:70px;width:auto;max-width:100%;object-fit:contain;"></div>
+      <div class="anunciante-slot"><img src="logopatrocinador4.png" alt="Patrocinador 4" style="max-height:70px;width:auto;max-width:100%;object-fit:contain;"></div>
+      <div class="anunciante-slot"><span class="anunciante-slot-icon">🏢</span><div class="anunciante-slot-text">SUA EMPRESA</div><div class="anunciante-slot-sub">Slot disponível</div></div>
+      <div class="anunciante-slot"><span class="anunciante-slot-icon">🏢</span><div class="anunciante-slot-text">SUA EMPRESA</div><div class="anunciante-slot-sub">Slot disponível</div></div>
+    </div>
+    <div class="anunciante-cta reveal">
+      <p>Garanta seu espaço. Fale com a equipe comercial do Tribuna Hoje.</p>
+      <a href="https://wa.me/558299470046" target="_blank" class="btn btn-primary" style="background:#25D366;color:#000;">💬 Fale no Whatsapp</a>
+    </div>
+  </div>
+</section>
+
+<!-- VÍDEOS YOUTUBE -->
+<section class="videos-projeto reveal" id="videos-projeto">
+  <div class="videos-projeto-inner">
+    <div class="videos-projeto-header">
+      <span class="section-tag">◈ ACOMPANHE O PROJETO</span>
+      <h2 class="section-title">VEJA OS VÍDEOS <em>DO PROJETO</em></h2>
+    </div>
+    <div class="videos-projeto-grid">
+      <div class="video-yt-card"><iframe src="https://www.youtube.com/embed/vXr9p2R9zCc" allowfullscreen></iframe><div class="video-yt-info"><span class="video-yt-tag">◈ TRIBUNA HOJE · YOUTUBE</span><div class="video-yt-titulo">DIDA</div></div></div>
+      <div class="video-yt-card"><iframe src="https://www.youtube.com/embed/FpMOxKOss-Q" allowfullscreen></iframe><div class="video-yt-info"><span class="video-yt-tag">◈ TRIBUNA HOJE · YOUTUBE</span><div class="video-yt-titulo">NARRAÇÃO DE EDSON MAURO</div></div></div>
+      <div class="video-yt-card"><iframe src="https://www.youtube.com/embed/g5ciOrV9uuA" allowfullscreen></iframe><div class="video-yt-info"><span class="video-yt-tag">◈ TRIBUNA HOJE · YOUTUBE</span><div class="video-yt-titulo">JOÃOZINHO PAULISTA</div></div></div>
+      <div class="video-yt-card"><iframe src="https://www.youtube.com/embed/OgZnVgtpPJ4" allowfullscreen></iframe><div class="video-yt-info"><span class="video-yt-tag">◈ TRIBUNA HOJE · YOUTUBE</span><div class="video-yt-titulo">EDSON MAURO</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo"><img src="LINE_HORIZONTAL.png" alt="Tribuna Hoje"></div>
+  <div class="footer-sub">Histórias das Copas 2026 · Maceió · Alagoas · Brasil</div>
+</footer>
+
+<script>
+  const starsEl = document.getElementById('stars');
+  for (let i = 0; i < 55; i++) {
+    const s = document.createElement('div');
+    s.className = 'star';
+    s.style.cssText = `left:${Math.random()*100}%;top:${Math.random()*100}%;--dur:${2+Math.random()*4}s;--delay:${Math.random()*5}s;`;
+    starsEl.appendChild(s);
+  }
+  const heroVid = document.querySelector('.hero-video-bg');
+  const heroPoster = document.querySelector('.hero-poster-fallback');
+  if (heroVid) {
+    heroVid.play().then(() => { if (heroPoster) heroPoster.style.display = 'none'; }).catch(() => { if (heroPoster) heroPoster.style.display = 'block'; });
+    document.addEventListener('touchstart', () => { heroVid.play().then(() => { if (heroPoster) heroPoster.style.display = 'none'; }); }, { once: true });
+  }
+  const videoObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => { const vid = entry.target; if (entry.isIntersecting) { vid.play(); } else { vid.pause(); } });
+  }, { threshold: 0.4 });
+  document.querySelectorAll('video[id]').forEach(v => videoObserver.observe(v));
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); } });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>

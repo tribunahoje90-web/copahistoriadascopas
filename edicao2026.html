@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Edição 2026 — Histórias das Copas</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playfair+Display:ital,wght@0,700;1,400&family=Source+Serif+4:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { background: #021a10; color: #f8f5ef; font-family: 'Source Serif 4', Georgia, serif; }
+
+  .header { background: rgba(0,0,0,0.97); padding: 12px 32px; display: flex; align-items: center; justify-content: space-between; border-bottom: 2px solid #cc0000; position: sticky; top: 0; z-index: 100; }
+  .header-logo img { height: 32px; width: auto; filter: brightness(0) invert(1); }
+  .header-title { font-family: 'Bebas Neue', sans-serif; font-size: 0.9rem; letter-spacing: 0.25em; color: #FFCC00; flex: 1; text-align: center; }
+  .header-back { font-family: 'Bebas Neue', sans-serif; font-size: 0.65rem; letter-spacing: 0.18em; color: rgba(255,255,255,0.5); text-decoration: none; transition: color 0.2s; white-space: nowrap; }
+  .header-back:hover { color: #FFCC00; }
+  @media (max-width: 600px) { .header { padding: 10px 14px; } .header-logo img { height: 24px; } .header-title { font-size: 0.7rem; } }
+
+  .hero { text-align: center; padding: 60px 24px 50px; background: linear-gradient(to bottom, #000, #021a10); }
+  .hero-badge { display: inline-block; background: #cc0000; color: #fff; font-family: 'Bebas Neue', sans-serif; font-size: 0.75rem; letter-spacing: 0.28em; padding: 5px 18px; border-radius: 2px; margin-bottom: 14px; }
+  .hero-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(2.5rem, 6vw, 5rem); color: #fff; line-height: 0.92; margin-bottom: 12px; }
+  .hero-title em { color: #FFCC00; font-style: normal; }
+  .hero-sub { font-size: 0.85rem; color: rgba(255,255,255,0.45); letter-spacing: 0.15em; text-transform: uppercase; }
+
+  .tabs { display: flex; justify-content: center; gap: 10px; padding: 0 24px 48px; flex-wrap: wrap; }
+  .tab-btn { font-family: 'Bebas Neue', sans-serif; font-size: 0.82rem; letter-spacing: 0.15em; padding: 9px 20px; border-radius: 3px; cursor: pointer; border: 2px solid rgba(255,255,255,0.15); background: transparent; color: rgba(255,255,255,0.5); transition: all 0.2s; }
+  .tab-btn:hover { border-color: #FFCC00; color: #FFCC00; }
+  .tab-btn.ativo { background: #FFCC00; color: #000; border-color: #FFCC00; }
+  .tab-btn.bloqueado { opacity: 0.3; cursor: not-allowed; }
+
+  .edicao { display: none; max-width: 900px; margin: 0 auto; padding: 0 24px 80px; }
+  .edicao.ativa { display: block; }
+
+  .edicao-capa { margin-bottom: 32px; border-radius: 8px; overflow: hidden; border: 1px solid rgba(255,255,255,0.1); }
+  .edicao-capa img { width: 100%; display: block; }
+  .edicao-capa-info { background: #000; padding: 16px 20px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+  .edicao-capa-num { font-family: 'Bebas Neue', sans-serif; font-size: 0.7rem; letter-spacing: 0.25em; color: #FFCC00; }
+  .edicao-capa-data { font-size: 0.68rem; color: rgba(255,255,255,0.3); font-style: italic; }
+
+  .pagina-item { margin-bottom: 24px; border-radius: 8px; overflow: hidden; border: 1px solid rgba(255,255,255,0.08); transition: border-color 0.25s; }
+  .pagina-item:hover { border-color: rgba(255,204,0,0.35); }
+  .pagina-item img { width: 100%; display: block; }
+  .pagina-label { background: #000; padding: 10px 16px; font-family: 'Bebas Neue', sans-serif; font-size: 0.65rem; letter-spacing: 0.22em; color: rgba(255,255,255,0.3); border-top: 1px solid rgba(255,255,255,0.05); }
+
+  .edicao-bloqueada { text-align: center; padding: 80px 24px; }
+  .lock-icon { font-size: 3rem; margin-bottom: 20px; opacity: 0.4; }
+  .lock-title { font-family: 'Bebas Neue', sans-serif; font-size: 2rem; color: rgba(255,255,255,0.3); margin-bottom: 10px; }
+  .lock-sub { font-size: 0.85rem; color: rgba(255,255,255,0.2); }
+
+  footer { background: #000; padding: 30px 24px; text-align: center; border-top: 1px solid rgba(255,255,255,0.06); }
+  footer img { height: 24px; filter: brightness(0) invert(1); opacity: 0.4; margin-bottom: 8px; display: block; margin-left: auto; margin-right: auto; }
+  footer p { font-size: 0.68rem; color: rgba(255,255,255,0.2); letter-spacing: 0.15em; text-transform: uppercase; }
+</style>
+</head>
+<body>
+
+<header class="header">
+  <a href="index.html" class="header-logo"><img src="LINE_HORIZONTAL.png" alt="Tribuna Hoje"></a>
+  <div class="header-title">◈ REVISTA HISTÓRIAS DAS COPAS 2026</div>
+  <a href="index.html" class="header-back">← VOLTAR</a>
+</header>
+
+<div class="hero">
+  <div class="hero-badge">⚽ EDIÇÃO 2026</div>
+  <h1 class="hero-title">SETE REVISTAS,<br><em>SETE HISTÓRIAS</em></h1>
+  <p class="hero-sub">Tribuna Hoje · Histórias das Copas 2026</p>
+</div>
+
+<div class="tabs">
+  <button class="tab-btn ativo" onclick="mostrarEdicao(1, this)">REVISTA 1</button>
+  <button class="tab-btn" onclick="mostrarEdicao(2, this)">REVISTA 2</button>
+  <button class="tab-btn bloqueado" title="Em breve">REVISTA 3</button>
+  <button class="tab-btn bloqueado" title="Em breve">REVISTA 4</button>
+  <button class="tab-btn bloqueado" title="Em breve">REVISTA 5</button>
+  <button class="tab-btn bloqueado" title="Em breve">REVISTA 6</button>
+  <button class="tab-btn bloqueado" title="Em breve">REVISTA 7</button>
+</div>
+
+<!-- REVISTA 1 -->
+<div class="edicao ativa" id="ed1">
+  <div class="edicao-capa">
+    <img src="capa2026-1.jpg" alt="Revista Histórias das Copas — Edição 1 · 2026">
+    <div class="edicao-capa-info">
+      <span class="edicao-capa-num">◈ REVISTA 1 · 2026</span>
+      <span class="edicao-capa-data">📅 9 de junho de 2026</span>
+    </div>
+  </div>
+  <div class="pagina-item"><img src="ed2026_1_p1.jpg" alt="Página 1"><div class="pagina-label">◈ PÁGINA 1</div></div>
+  <div class="pagina-item"><img src="ed2026_1_p2.jpg" alt="Página 2"><div class="pagina-label">◈ PÁGINA 2</div></div>
+  <div class="pagina-item"><img src="ed2026_1_p3.jpg" alt="Página 3"><div class="pagina-label">◈ PÁGINA 3</div></div>
+  <div class="pagina-item"><img src="ed2026_1_p4.jpg" alt="Página 4"><div class="pagina-label">◈ PÁGINA 4</div></div>
+  <div class="pagina-item"><img src="ed2026_1_p5.jpg" alt="Página 5"><div class="pagina-label">◈ PÁGINA 5</div></div>
+  <div class="pagina-item"><img src="ed2026_1_p6.jpg" alt="Página 6"><div class="pagina-label">◈ PÁGINA 6</div></div>
+  <div class="pagina-item"><img src="ed2026_1_p7.jpg" alt="Página 7"><div class="pagina-label">◈ PÁGINA 7</div></div>
+  <div class="pagina-item"><img src="ed2026_1_p8.jpg" alt="Página 8"><div class="pagina-label">◈ PÁGINA 8</div></div>
+  <div class="pagina-item"><img src="ed2026_1_p9.jpg" alt="Página 9"><div class="pagina-label">◈ PÁGINA 9</div></div>
+  <div class="pagina-item"><img src="ed2026_1_p10.jpg" alt="Página 10"><div class="pagina-label">◈ PÁGINA 10</div></div>
+  <div class="pagina-item"><img src="ed2026_1_p11.jpg" alt="Página 11"><div class="pagina-label">◈ PÁGINA 11</div></div>
+</div>
+
+<!-- REVISTA 2 — DESBLOQUEADA -->
+<div class="edicao" id="ed2">
+  <div class="edicao-capa">
+    <img src="capa2026-2.jpg" alt="Revista Histórias das Copas — Edição 2 · 2026">
+    <div class="edicao-capa-info">
+      <span class="edicao-capa-num">◈ REVISTA 2 · 2026</span>
+      <span class="edicao-capa-data">📅 13 de junho de 2026</span>
+    </div>
+  </div>
+  <div class="pagina-item"><img src="ed2026_2_p1.jpg" alt="Página 1"><div class="pagina-label">◈ PÁGINA 1</div></div>
+  <div class="pagina-item"><img src="ed2026_2_p2.jpg" alt="Página 2"><div class="pagina-label">◈ PÁGINA 2</div></div>
+  <div class="pagina-item"><img src="ed2026_2_p3.jpg" alt="Página 3"><div class="pagina-label">◈ PÁGINA 3</div></div>
+  <div class="pagina-item"><img src="ed2026_2_p4.jpg" alt="Página 4"><div class="pagina-label">◈ PÁGINA 4</div></div>
+  <div class="pagina-item"><img src="ed2026_2_p5.jpg" alt="Página 5"><div class="pagina-label">◈ PÁGINA 5</div></div>
+  <div class="pagina-item"><img src="ed2026_2_p6.jpg" alt="Página 6"><div class="pagina-label">◈ PÁGINA 6</div></div>
+  <div class="pagina-item"><img src="ed2026_2_p7.jpg" alt="Página 7"><div class="pagina-label">◈ PÁGINA 7</div></div>
+  <div class="pagina-item"><img src="ed2026_2_p8.jpg" alt="Página 8"><div class="pagina-label">◈ PÁGINA 8</div></div>
+  <div class="pagina-item"><img src="ed2026_2_p9.jpg" alt="Página 9"><div class="pagina-label">◈ PÁGINA 9</div></div>
+  <div class="pagina-item"><img src="ed2026_2_p10.jpg" alt="Página 10"><div class="pagina-label">◈ PÁGINA 10</div></div>
+  <div class="pagina-item"><img src="ed2026_2_p11.jpg" alt="Página 11"><div class="pagina-label">◈ PÁGINA 11</div></div>
+  <div class="pagina-item"><img src="ed2026_2_p12.jpg" alt="Página 12"><div class="pagina-label">◈ PÁGINA 12</div></div>
+  <div class="pagina-item"><img src="ed2026_2_p13.jpg" alt="Página 13"><div class="pagina-label">◈ PÁGINA 13</div></div>
+  <div class="pagina-item"><img src="ed2026_2_p14.jpg" alt="Página 14"><div class="pagina-label">◈ PÁGINA 14</div></div>
+</div>
+
+<!-- REVISTAS 3–7 — BLOQUEADAS -->
+<div class="edicao" id="ed3"><div class="edicao-bloqueada"><div class="lock-icon">🔒</div><div class="lock-title">EM BREVE</div><p class="lock-sub">REVISTA 3 · 20 DE JUNHO DE 2026</p></div></div>
+<div class="edicao" id="ed4"><div class="edicao-bloqueada"><div class="lock-icon">🔒</div><div class="lock-title">EM BREVE</div><p class="lock-sub">REVISTA 4 · 27 DE JUNHO DE 2026</p></div></div>
+<div class="edicao" id="ed5"><div class="edicao-bloqueada"><div class="lock-icon">🔒</div><div class="lock-title">EM BREVE</div><p class="lock-sub">REVISTA 5 · 4 DE JULHO DE 2026</p></div></div>
+<div class="edicao" id="ed6"><div class="edicao-bloqueada"><div class="lock-icon">🔒</div><div class="lock-title">EM BREVE</div><p class="lock-sub">REVISTA 6 · 11 DE JULHO DE 2026</p></div></div>
+<div class="edicao" id="ed7"><div class="edicao-bloqueada"><div class="lock-icon">🔒</div><div class="lock-title">EM BREVE</div><p class="lock-sub">REVISTA 7 · 18 DE JULHO DE 2026</p></div></div>
+
+<footer>
+  <img src="LINE_HORIZONTAL.png" alt="Tribuna Hoje">
+  <p>Histórias das Copas 2026 · Maceió · Alagoas · Brasil</p>
+</footer>
+
+<script>
+function mostrarEdicao(num, btn) {
+  if (btn.classList.contains('bloqueado')) return;
+  document.querySelectorAll('.edicao').forEach(e => e.classList.remove('ativa'));
+  document.querySelectorAll('.tab-btn:not(.bloqueado)').forEach(b => b.classList.remove('ativo'));
+  document.getElementById('ed' + num).classList.add('ativa');
+  btn.classList.add('ativo');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+const params = new URLSearchParams(window.location.search);
+const ed = parseInt(params.get('ed'));
+if (ed && ed >= 1 && ed <= 7) {
+  const btn = document.querySelectorAll('.tab-btn')[ed - 1];
+  if (!btn.classList.contains('bloqueado')) mostrarEdicao(ed, btn);
+}
+</script>
+</body>
+</html>
